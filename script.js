@@ -7,7 +7,7 @@ const color = document.querySelector("#color")
 const out = document.querySelector(".out")
 const inset = document.querySelector("#inset")
 const outset = document.querySelector("#outset")
-
+const copy = document.querySelector(".copy")
 const box = document.querySelector(".box")
 // r1.onchange = generateBoxShadow
 r1.oninput = generateBoxShadow
@@ -29,4 +29,10 @@ function generateBoxShadow(){
   if (inset.checked){
 
   }
+}
+copy.onclick = function () {
+  const text = out.innerHTML;
+
+  window.navigator.clipboard.writeText(text);
+  alert("Copied");
 }
