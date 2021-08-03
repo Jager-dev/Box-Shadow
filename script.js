@@ -27,12 +27,15 @@ function generateBoxShadow(){
   out.innerHTML += `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${color.value} </br>`
   out.innerHTML += `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${color.value}`
   if (inset.checked){
-
+    box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${color.value} inset`
+  }
+  else{
+    box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${color.value}`
   }
 }
-copy.onclick = function () {
-  const text = out.innerHTML;
-
-  window.navigator.clipboard.writeText(text);
-  alert("Copied");
-}
+// copy.onclick = function () {
+//   const text = out.innerHTML;
+//
+//   window.navigator.clipboard.writeText(text);
+//   alert("Copied");
+// }
